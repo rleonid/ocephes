@@ -1,0 +1,14 @@
+opam-version: "1.2"
+name: "ocephes"
+version: "0.0.1"
+maintainer: "Leonid Rozenberg <leonidr@gmail.com>"
+authors: "Leonid Rozenberg <leonidr@gmail.com>"
+homepage: "https://github.com/rleonid/Ocephes"
+bug-reports: "https://github.com/rleonid/Ocephes/issues"
+license: "Apache 2.0"
+build: [
+  [make ]
+  [make "install"]
+]
+remove: ["make uninstall"]
+depends: ["ocamlfind" "ctypes"]
