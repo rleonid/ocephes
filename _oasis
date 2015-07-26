@@ -1,0 +1,28 @@
+OASISFormat: 0.4
+Name:        OCephes
+Version:     0.0.1
+Synopsis:    Bindings to math functions distributed with Cephes
+Authors:     Leonid Rozenberg
+License:     BSD-3-clause
+Plugins:     DevFiles (0.3), META (0.3)
+BuildTools : ocamlbuild
+
+Library "cephes"
+  Path:             src/lib
+  Modules:          Cephes
+  InternalModules:  Cephes_bindings, Cephes_generated
+  CSources:         mconf.h,
+                    cephes_stubs.c,
+                    bdtr.c, btdtr.c, chdtr.c, drand.c, expx2.c, fdtr.c, gamma.c,
+                    gdtr.c, igam.c, igami.c, incbet.c, incbi.c, isnan.c, mtherr.c,
+                    nbdtr.c, ndtr.c, ndtri.c, pdtr.c, stdtr.c, unity.c, polevl.c,
+                    const.c
+  CCOpt:            -O2 -Wall -I $pkg_ctypes_stubs
+  BuildDepends:     bytes, ctypes.stubs
+  BuildTools:       cephes_bindgen
+
+Executable "cephes_bindgen"
+  Install:          false
+  Path:             src/lib_gen
+  MainIs:           cephes_bindgen.ml
+  BuildDepends:     ctypes.stubs
