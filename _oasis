@@ -1,8 +1,11 @@
 OASISFormat: 0.4
 Name:        OCephes
 Version:     0.0.1
-Synopsis:    Bindings to math functions distributed with Cephes
-Authors:     Leonid Rozenberg
+Synopsis:    Bindings to special math functions from the Cephes library
+Description: Ctypes bindings to some of the functions in this common C
+  mathematical functions library.
+Authors:     Leonid Rozenberg <leonidr@gmail.com>
+Maintainers: Leonid Rozenberg <leonidr@gmail.com>
 License:     BSD-3-clause
 Plugins:     DevFiles (0.3), META (0.3)
 BuildTools : ocamlbuild
@@ -22,6 +25,7 @@ Library "cephes"
   BuildTools:       cephes_bindgen
 
 Executable "cephes_bindgen"
+  Build$:           flag(tests)
   Install:          false
   Path:             src/lib_gen
   MainIs:           cephes_bindgen.ml
