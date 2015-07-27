@@ -25,6 +25,7 @@ Library "cephes"
   BuildTools:       cephes_bindgen
 
 Executable "cephes_bindgen"
+  Build$:           flag(tests)
   Install:          false
   Path:             src/lib_gen
   MainIs:           cephes_bindgen.ml
