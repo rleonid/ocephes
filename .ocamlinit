@@ -1,3 +1,4 @@
 #directory "_build/src/lib"
 #require "ctypes.stubs"
-#load_rec "_build/src/lib/cephes.cma"
+#load_rec "_build/src/lib/ocephes.cma"
+

@@ -10,9 +10,9 @@ License:     BSD-3-clause
 Plugins:     DevFiles (0.3), META (0.3)
 BuildTools : ocamlbuild
 
-Library "cephes"
+Library "ocephes"
   Path:             src/lib
-  Modules:          Cephes
+  Modules:          Ocephes
   InternalModules:  Cephes_bindings, Cephes_generated
   CSources:         mconf.h,
                     cephes_stubs.c,
