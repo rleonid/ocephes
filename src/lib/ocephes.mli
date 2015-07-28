@@ -19,3 +19,12 @@ val igam : float -> float -> float
 (** [igamc a x] computes the regularized (divided by [gamma a])
     uppwer incomplete (integrate [x] to [infinity]) gamma function. *)
 val igamc : float -> float -> float
+
+(** [ndtri p] computes the value [x] such that the integral of the normal
+    probability density function from [neg_infinity] to [x] is [p].*)
+val ndtri : float -> float
+
+(** [stdtri k p] computes the value [x] such that the integral
+    (from [neg_infinity] to [x]) of the Student's T probability density
+    function, with [k] degrees of freedom is [p].*)
+val stdtri : int -> float -> float

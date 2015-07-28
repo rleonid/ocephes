@@ -12,3 +12,5 @@ let lgam  = C.lgam
 let igam  = C.igam
 let igamc = C.igamc
 
+let ndtri  = C.ndtri
+let stdtri = C.stdtri
