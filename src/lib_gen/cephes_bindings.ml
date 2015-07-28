@@ -10,4 +10,6 @@ module C(F: Cstubs.FOREIGN) = struct
   let igam      = F.foreign "igam"     (double @-> double @-> returning double)
   let igamc     = F.foreign "igamc"    (double @-> double @-> returning double)
 
+  let ndtri     = F.foreign "ndtri"    (double @-> returning double)
+  let stdtri    = F.foreign "stdtri"   (int @-> double @-> returning double)
 end
