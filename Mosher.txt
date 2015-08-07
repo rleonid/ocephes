@@ -1,0 +1,37 @@
+Email from Steve Mosher granting permission
+
+Received: by 10.76.34.161 with SMTP id a1csp482856oaj;
+        Wed, 5 Aug 2015 10:07:50 -0700 (PDT)
+Date: Wed, 5 Aug 2015 13:07:40 -0400 (EDT)
+From: Stephen Moshier <steve@moshier.net>
+To: Leonid Rozenberg <leonidr@gmail.com>
+Subject: Re: Licensing Cephes
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII; format=flowed
+
+
+Leonid,
+
+Thank you for writing.  You are welcome to distribute the Cephes code 
+under the BSD license.
+
+Steve
+
+
+
+On Sun, 26 Jul 2015, Leonid Rozenberg wrote:
+
+> Professor Moshier,
+> 
+> I'm a programmer developing a mathematical library in OCaml, to expose
+> bindings to your excellent Cephes library [1]. Could I wrap your code
+> and redistribute it using an Apaches2 or BSD license?
+> 
+> Thank you,
+> 
+> Leonid
+> 
+> 1. https://github.com/rleonid/Ocephes
+> 
+>
+
