@@ -14,3 +14,4 @@ let igamc = C.igamc
 
 let ndtri  = C.ndtri
 let stdtri = C.stdtri
+let pow ~base = C.pow base

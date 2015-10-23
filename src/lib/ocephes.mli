@@ -28,3 +28,6 @@ val ndtri : float -> float
     (from [neg_infinity] to [x]) of the Student's T probability density
     function, with [k] degrees of freedom is [p].*)
 val stdtri : int -> float -> float
+
+(** [pow ~base x] raises value [base] to the power of [x]. *)
+val pow : base:float -> float -> float

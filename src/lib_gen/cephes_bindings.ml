@@ -12,4 +12,5 @@ module C(F: Cstubs.FOREIGN) = struct
 
   let ndtri     = F.foreign "ndtri"    (double @-> returning double)
   let stdtri    = F.foreign "stdtri"   (int @-> double @-> returning double)
+  let pow       = F.foreign "pow"      (double @-> double @-> returning double)
 end
