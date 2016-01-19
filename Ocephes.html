@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="Up" href="index.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Ocephes" rel="Chapter" href="Ocephes.html"><title>Ocephes</title>
+</head>
+<body>
+<div class="navbar">&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;</div>
+<h1>Module <a href="type_Ocephes.html">Ocephes</a></h1>
+
+<pre><span class="keyword">module</span> Ocephes: <code class="code"><span class="keyword">sig</span></code> <a href="Ocephes.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Bindings to Stephen Mosher's Cephes library.<br>
+</div>
+<hr width="100%">
+
+<pre><span id="VALerf"><span class="keyword">val</span> erf</span> : <code class="type">float -> float</code></pre><div class="info ">
+<code class="code">erf x</code> the error function <code class="code">(2/sqrt(pi) *. \int_ 0^[x] exp (-t^2) dt</code>.<br>
+</div>
+
+<pre><span id="VALerfc"><span class="keyword">val</span> erfc</span> : <code class="type">float -> float</code></pre><div class="info ">
+<code class="code">erfc x</code> the complement of the error function <code class="code">1.0 - erf x</code>.<br>
+</div>
+
+<pre><span id="VALgamma"><span class="keyword">val</span> gamma</span> : <code class="type">float -> float</code></pre><div class="info ">
+<code class="code">gamma x</code> computes the gamma function for <code class="code">x</code>, this is the extension of the
+    factorial function to real numbers.<br>
+</div>
+
+<pre><span id="VALlgam"><span class="keyword">val</span> lgam</span> : <code class="type">float -> float</code></pre><div class="info ">
+<code class="code">lgam x</code> computes the logarithm of the <code class="code">gamma</code> function.<br>
+</div>
+
+<pre><span id="VALigam"><span class="keyword">val</span> igam</span> : <code class="type">float -> float -> float</code></pre><div class="info ">
+<code class="code">igam a x</code> computes the regularized (divided by <code class="code">gamma a</code>)
+    lower incomplete (integrate from 0 to <code class="code">x</code>) gamma function.<br>
+</div>
+
+<pre><span id="VALigamc"><span class="keyword">val</span> igamc</span> : <code class="type">float -> float -> float</code></pre><div class="info ">
+<code class="code">igamc a x</code> computes the regularized (divided by <code class="code">gamma a</code>)
+    uppwer incomplete (integrate <code class="code">x</code> to <code class="code">infinity</code>) gamma function.<br>
+</div>
+
+<pre><span id="VALndtri"><span class="keyword">val</span> ndtri</span> : <code class="type">float -> float</code></pre><div class="info ">
+<code class="code">ndtri p</code> computes the value <code class="code">x</code> such that the integral of the normal
+    probability density function from <code class="code">neg_infinity</code> to <code class="code">x</code> is <code class="code">p</code>.<br>
+</div>
+
+<pre><span id="VALstdtri"><span class="keyword">val</span> stdtri</span> : <code class="type">int -> float -> float</code></pre><div class="info ">
+<code class="code">stdtri k p</code> computes the value <code class="code">x</code> such that the integral
+    (from <code class="code">neg_infinity</code> to <code class="code">x</code>) of the Student's T probability density
+    function, with <code class="code">k</code> degrees of freedom is <code class="code">p</code>.<br>
+</div>
+
+<pre><span id="VALpow"><span class="keyword">val</span> pow</span> : <code class="type">base:float -> float -> float</code></pre><div class="info ">
+<code class="code">pow ~base x</code> raises value <code class="code">base</code> to the power of <code class="code">x</code>.<br>
+</div>
+</body></html>
