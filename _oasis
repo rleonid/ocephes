@@ -9,6 +9,7 @@ Maintainers: Leonid Rozenberg <leonidr@gmail.com>
 License:     BSD-3-clause
 Plugins:     DevFiles (0.3), META (0.3)
 BuildTools : ocamlbuild
+AlphaFeatures:  ocamlbuild_more_args
 
 Library "ocephes"
   Path:             src/lib
@@ -29,3 +30,11 @@ Executable "cephes_bindgen"
   Path:             src/lib_gen
   MainIs:           cephes_bindgen.ml
   BuildDepends:     ctypes.stubs
+
+Document ocephes
+  Title:                API reference for OCephes
+  Type:                 ocamlbuild (0.4)
+  BuildTools:           ocamlbuild, ocamldoc
+  XOCamlbuildPath:      src/lib
+  XOCamlbuildLibraries: ocephes
+  XOCamlbuildExtraArgs: -docflags '-thread,-charset,UTF-8,-keep-code,-colorize-code,-sort'
