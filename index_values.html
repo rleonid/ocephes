@@ -12,15 +12,221 @@
 &nbsp;</div>
 <h1>Index of values</h1>
 <table>
+<tr><td align="left"><br>B</td></tr>
+<tr><td><a href="Ocephes.html#VALbdtr">bdtr</a> [<a href="Ocephes.html">Ocephes</a>]</td>
+<td><div class="info">
+<pre class="verbatim">	Binomial distribution
+ SYNOPSIS:
+ int k, n;
+ double p, y, bdtr();
+ y = bdtr( k, n, p );
+ DESCRIPTION:
+ Returns the sum of the terms 0 through k of the Binomial
+ probability density:
+   k
+   --  ( n )   j      n-j
+   &gt;   (   )  p  (1-p)
+   --  ( j )
+  j=0
+ The terms are not summed directly; instead the incomplete
+ beta integral is employed, according to the formula
+ y = bdtr( k, n, p ) = incbet( n-k, k+1, 1-p ).
+ The arguments must be positive, with p ranging from 0 to 1.
+ ACCURACY:
+ Tested at random points (a,b,p), with p between 0 and 1.
+               a,b                     Relative error:
+ arithmetic  domain     # trials      peak         rms
+  For p between 0.001 and 1:
+    IEEE     0,100       100000      4.3e-15     2.6e-16
+ See also incbet.c.
+ ERROR MESSAGES:
+   message         condition      value returned
+ bdtr domain         k &lt; 0            0.0
+                     n &lt; k
+                     x &lt; 0, x &gt; 1
+</pre>
+</div>
+</td></tr>
+<tr><td><a href="Ocephes.html#VALbdtrc">bdtrc</a> [<a href="Ocephes.html">Ocephes</a>]</td>
+<td><div class="info">
+<pre class="verbatim">	Complemented binomial distribution
+ SYNOPSIS:
+ int k, n;
+ double p, y, bdtrc();
+ y = bdtrc( k, n, p );
+ DESCRIPTION:
+ Returns the sum of the terms k+1 through n of the Binomial
+ probability density:
+   n
+   --  ( n )   j      n-j
+   &gt;   (   )  p  (1-p)
+   --  ( j )
+  j=k+1
+ The terms are not summed directly; instead the incomplete
+ beta integral is employed, according to the formula
+ y = bdtrc( k, n, p ) = incbet( k+1, n-k, p ).
+ The arguments must be positive, with p ranging from 0 to 1.
+ ACCURACY:
+ Tested at random points (a,b,p).
+               a,b                     Relative error:
+ arithmetic  domain     # trials      peak         rms
+  For p between 0.001 and 1:
+    IEEE     0,100       100000      6.7e-15     8.2e-16
+  For p between 0 and .001:
+    IEEE     0,100       100000      1.5e-13     2.7e-15
+ ERROR MESSAGES:
+   message         condition      value returned
+ bdtrc domain      x&lt;0, x&gt;1, n&lt;k       0.0
+</pre>
+</div>
+</td></tr>
+<tr><td><a href="Ocephes.html#VALbdtri">bdtri</a> [<a href="Ocephes.html">Ocephes</a>]</td>
+<td><div class="info">
+<pre class="verbatim">	Inverse binomial distribution
+ SYNOPSIS:
+ int k, n;
+ double p, y, bdtri();
+ p = bdtr( k, n, y );
+ DESCRIPTION:
+ Finds the event probability p such that the sum of the
+ terms 0 through k of the Binomial probability density
+ is equal to the given cumulative probability y.
+ This is accomplished using the inverse beta integral
+ function and the relation
+ 1 - p = incbi( n-k, k+1, y ).
+ ACCURACY:
+ Tested at random points (a,b,p).
+               a,b                     Relative error:
+ arithmetic  domain     # trials      peak         rms
+  For p between 0.001 and 1:
+    IEEE     0,100       100000      2.3e-14     6.4e-16
+    IEEE     0,10000     100000      6.6e-12     1.2e-13
+  For p between 10^-6 and 0.001:
+    IEEE     0,100       100000      2.0e-12     1.3e-14
+    IEEE     0,10000     100000      1.5e-12     3.2e-14
+ See also incbi.c.
+ ERROR MESSAGES:
+   message         condition      value returned
+ bdtri domain     k &lt; 0, n &lt;= k         0.0
+                  x &lt; 0, x &gt; 1
+</pre>
+</div>
+</td></tr>
+<tr><td><a href="Ocephes.html#VALbtdtr">btdtr</a> [<a href="Ocephes.html">Ocephes</a>]</td>
+<td><div class="info">
+<pre class="verbatim">	Beta distribution
+ SYNOPSIS:
+ double a, b, x, y, btdtr();
+ y = btdtr( a, b, x );
+ DESCRIPTION:
+ Returns the area from zero to x under the beta density
+ function:
+                          x
+            -             -
+           | (a+b)       | |  a-1      b-1
+ P(x)  =  ----------     |   t    (1-t)    dt
+           -     -     | |
+          | (a) | (b)   -
+                         0
+ This function is identical to the incomplete beta
+ integral function incbet(a, b, x).
+ The complemented function is
+ 1 - P(1-x)  =  incbet( b, a, x );
+ ACCURACY:
+ See incbet.c.
+</pre>
+</div>
+</td></tr>
+<tr><td align="left"><br>C</td></tr>
+<tr><td><a href="Ocephes.html#VALchbevl">chbevl</a> [<a href="Ocephes.html">Ocephes</a>]</td>
+<td><div class="info">
+<pre class="verbatim">	Evaluate Chebyshev series
+ SYNOPSIS:
+ int N;
+ double x, y, coef[N], chebevl();
+ y = chbevl( x, coef, N );
+ DESCRIPTION:
+ Evaluates the series
+        N-1
+         - '
+  y  =   &gt;   coef[i] T (x/2)
+         -            i
+        i=0
+ of Chebyshev polynomials Ti at argument x/2.
+ Coefficients are stored in reverse order, i.e. the zero
+ order term is last in the array.  Note N is the number of
+ coefficients, not the order.
+ If coefficients are for the interval a to b, x must
+ have been transformed to x -&gt; 2(2x - b - a)/(b-a) before
+ entering the routine.  This maps x from (a, b) to (-1, 1),
+ over which the Chebyshev polynomials are defined.
+ If the coefficients are for the inverted interval, in
+ which (a, b) is mapped to (1/b, 1/a), the transformation
+ required is x -&gt; 2(2ab/x - b - a)/(b-a).  If b is infinity,
+ this becomes x -&gt; 4a/x - 1.
+ SPEED:
+ Taking advantage of the recurrence properties of the
+ Chebyshev polynomials, the routine requires one more
+ addition per loop than evaluating a nested polynomial of
+ the same degree.
+</pre>
+</div>
+</td></tr>
 <tr><td align="left"><br>E</td></tr>
 <tr><td><a href="Ocephes.html#VALerf">erf</a> [<a href="Ocephes.html">Ocephes</a>]</td>
 <td><div class="info">
-<code class="code">erf x</code> the error function <code class="code">(2/sqrt(pi) *. \int_ 0^[x] exp (-t^2) dt</code>.
+<pre class="verbatim">	Error function
+ SYNOPSIS:
+ double x, y, erf();
+ y = erf( x );
+ DESCRIPTION:
+ The integral is
+                           x 
+                            -
+                 2         | |          2
+   erf(x)  =  --------     |    exp( - t  ) dt.
+              sqrt(pi)   | |
+                          -
+                           0
+ The magnitude of x is limited to 9.231948545 for DEC
+ arithmetic; 1 or -1 is returned outside this range.
+ For 0 &lt;= |x| &lt; 1, erf(x) = x * P4(x**2)/Q5(x**2); otherwise
+ erf(x) = 1 - erfc(x).
+ ACCURACY:
+                      Relative error:
+ arithmetic   domain     # trials      peak         rms
+    DEC       0,1         14000       4.7e-17     1.5e-17
+    IEEE      0,1         30000       3.7e-16     1.0e-16
+</pre>
 </div>
 </td></tr>
 <tr><td><a href="Ocephes.html#VALerfc">erfc</a> [<a href="Ocephes.html">Ocephes</a>]</td>
 <td><div class="info">
-<code class="code">erfc x</code> the complement of the error function <code class="code">1.0 - erf x</code>.
+<pre class="verbatim">	Complementary error function
+ SYNOPSIS:
+ double x, y, erfc();
+ y = erfc( x );
+ DESCRIPTION:
+  1 - erf(x) =
+                           inf. 
+                             -
+                  2         | |          2
+   erfc(x)  =  --------     |    exp( - t  ) dt
+               sqrt(pi)   | |
+                           -
+                            x
+ For small x, erfc(x) = 1 - erf(x); otherwise rational
+ approximations are computed.
+ A special function expx2.c is used to suppress error amplification
+ in computing exp(-x^2).
+ ACCURACY:
+                      Relative error:
+ arithmetic   domain     # trials      peak         rms
+    IEEE      0,26.6417   30000       1.3e-15     2.2e-16
+ ERROR MESSAGES:
+   message         condition              value returned
+ erfc underflow    x &gt; 9.231948545 (DEC)       0.0
+</pre>.
 </div>
 </td></tr>
 <tr><td align="left"><br>G</td></tr>
@@ -50,6 +256,36 @@
 </div>
 </td></tr>
 <tr><td align="left"><br>N</td></tr>
+<tr><td><a href="Ocephes.html#VALndtr">ndtr</a> [<a href="Ocephes.html">Ocephes</a>]</td>
+<td><div class="info">
+<pre class="verbatim">	Normal distribution function
+ SYNOPSIS:
+ double x, y, ndtr();
+ y = ndtr( x );
+ DESCRIPTION:
+ Returns the area under the Gaussian probability density
+ function, integrated from minus infinity to x:
+                            x
+                             -
+                   1        | |          2
+    ndtr(x)  = ---------    |    exp( - t /2 ) dt
+               sqrt(2pi)  | |
+                           -
+                          -inf.
+             =  ( 1 + erf(z) ) / 2
+             =  erfc(z) / 2
+ where z = x/sqrt(2). Computation is via the functions
+ erf and erfc with care to avoid error amplification in computing exp(-x^2).
+ ACCURACY:
+                      Relative error:
+ arithmetic   domain     # trials      peak         rms
+    IEEE     -13,0        30000       1.3e-15     2.2e-16
+ ERROR MESSAGES:
+   message         condition         value returned
+ erfc underflow    x &gt; 37.519379347       0.0
+</pre>
+</div>
+</td></tr>
 <tr><td><a href="Ocephes.html#VALndtri">ndtri</a> [<a href="Ocephes.html">Ocephes</a>]</td>
 <td><div class="info">
 <code class="code">ndtri p</code> computes the value <code class="code">x</code> such that the integral of the normal
