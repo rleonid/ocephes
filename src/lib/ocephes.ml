@@ -3,6 +3,7 @@ open Ctypes
 
 module C = Cephes_bindings.C(Cephes_generated)
 
+let ndtr  = C.ndtr
 let erf   = C.erf
 let erfc  = C.erfc
 
