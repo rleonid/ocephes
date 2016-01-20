@@ -2,6 +2,8 @@
 
 Bindings to special math functions from the [Cephes](http://www.netlib.org/cephes/) library.
 
+Documented online API [available](https://rleonid.github.io/Ocephes).
+
 # Note
 
 Stephen L. Moshier has granted permission for this code to be released under
