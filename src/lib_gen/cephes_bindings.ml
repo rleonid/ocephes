@@ -1,6 +1,8 @@
 open Ctypes
 
 module C(F: Cstubs.FOREIGN) = struct
+
+  let ndtr      = F.foreign "ndtr"    (double @-> returning double)
   let erf       = F.foreign "erf"      (double @-> returning double)
   let erfc      = F.foreign "erfc"     (double @-> returning double)
 

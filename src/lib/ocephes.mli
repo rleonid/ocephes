@@ -1,9 +1,14 @@
 (** Bindings to Stephen Mosher's Cephes library. *)
 
-(** [erf x] the error function [(2/sqrt(pi) *. \int_ 0^[x] exp (-t^2) dt]. *)
+(** {2 ndtr.c } *)
+
+(** {v INSERT:ndtr.c,3,45 v} *)
+val ndtr : float -> float
+
+(** {v INSERT:ndtr.c,50,88 v} *)
 val erf : float -> float
 
-(** [erfc x] the complement of the error function [1.0 - erf x].*)
+(** {v INSERT:ndtr.c,92,136 v}. *)
 val erfc : float -> float
 
 (** [gamma x] computes the gamma function for [x], this is the extension of the
