@@ -2,7 +2,13 @@ open Ctypes
 
 module C(F: Cstubs.FOREIGN) = struct
 
-  let ndtr      = F.foreign "ndtr"    (double @-> returning double)
+  (* bdtr.c *)
+  let bdtr      = F.foreign "bdtr"    (int @-> int @-> double @-> returning double)
+  let bdtrc     = F.foreign "bdtrc"   (int @-> int @-> double @-> returning double)
+  let bdtri     = F.foreign "bdtri"   (int @-> int @-> double @-> returning double)
+
+  (* ndtr.c *)
+  let ndtr      = F.foreign "ndtr"     (double @-> returning double)
   let erf       = F.foreign "erf"      (double @-> returning double)
   let erfc      = F.foreign "erfc"     (double @-> returning double)
 

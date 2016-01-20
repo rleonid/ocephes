@@ -3,16 +3,23 @@ open Ctypes
 
 module C = Cephes_bindings.C(Cephes_generated)
 
-let ndtr  = C.ndtr
-let erf   = C.erf
-let erfc  = C.erfc
+(* bdtr.c *)
 
-let gamma = C.gamma
-let lgam  = C.lgam
+let bdtr ~k ~n = C.bdtr k n
+let bdtrc ~k ~n = C.bdtrc k n
+let bdtri ~k ~n = C.bdtri k n
 
-let igam  = C.igam
-let igamc = C.igamc
+(* ndtr.c *)
+let ndtr    = C.ndtr
+let erf     = C.erf
+let erfc    = C.erfc
 
-let ndtri  = C.ndtri
-let stdtri = C.stdtri
+let gamma   = C.gamma
+let lgam    = C.lgam
+
+let igam      = C.igam
+let igamc     = C.igamc
+
+let ndtri     = C.ndtri
+let stdtri    = C.stdtri
 let pow ~base = C.pow base

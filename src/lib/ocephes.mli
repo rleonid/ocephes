@@ -1,5 +1,16 @@
 (** Bindings to Stephen Mosher's Cephes library. *)
 
+(** {2 bdtr.c } *)
+
+(** {v INSERT:bdtr.c,3,47 v} *)
+val bdtr : k:int -> n:int -> float -> float
+
+(** {v INSERT:bdtr.c,51,94 v} *)
+val bdtrc : k:int -> n:int -> float -> float
+
+(** {v INSERT:bdtr.c,98,138 v} *)
+val bdtri : k:int -> n:int -> float -> float
+
 (** {2 ndtr.c } *)
 
 (** {v INSERT:ndtr.c,3,45 v} *)
