@@ -17,7 +17,7 @@ Library "ocephes"
   InternalModules:  Cephes_bindings, Cephes_generated
   CSources:         mconf.h,
                     cephes_stubs.c,
-                    bdtr.c, btdtr.c, chdtr.c, drand.c, expx2.c, fdtr.c, gamma.c,
+                    bdtr.c, btdtr.c, chbevl.c, chdtr.c, drand.c, expx2.c, fdtr.c, gamma.c,
                     gdtr.c, igam.c, igami.c, incbet.c, incbi.c, isnan.c, mtherr.c,
                     nbdtr.c, ndtr.c, ndtri.c, pdtr.c, stdtr.c, unity.c, polevl.c,
                     const.c

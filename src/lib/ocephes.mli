@@ -16,6 +16,11 @@ val bdtri : k:int -> n:int -> float -> float
 (** {v INSERT:btdtr.c,3,42 v} *)
 val btdtr : a:float -> b:float -> float -> float
 
+(** {2 Cheybshev Series -- chbevl.c} *)
+
+(** {v INSERT:chbevl.c,3,50 v} *)
+val chbevl : ?n:int -> float -> float array -> float
+
 (** {2 ndtr.c } *)
 
 (** {v INSERT:ndtr.c,3,45 v} *)
