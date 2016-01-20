@@ -8,14 +8,18 @@ dispatch
     begin function
     | After_rules ->
       ignore (Sys.command "mkdir -p _build/src/lib");
-      let perl_match = "INSERT:([a-z]+.c)\,([0-9]+)\,([0-9]+)" in
-      let sed_subs   = "sed -n \"$2,$3s\\/\\^ \\*\\/\\/p\" src\/lib\/$1" in
+      (* From the range specified in 2nd to 3rd arguments strip
+         the "^ *" from file in 1st arg.  *)
+      let perl_match = "INSERT:([a-z]+.c)\\,([0-9]+)\\,([0-9]+)" in
+      let sed_subs   = "sed -n \"$2,$3s|\\^ \\\\*||p\" src\\/lib\\/$1" in
+      let sed_str_sp = "sed \"\\/\\^\\$\\/d\" " in
       let from_file  = "src/lib/ocephes.mli" in
       let to_file    = "_build/src/lib/ocephes.mli" in
       let command =
-        Printf.sprintf "perl -pe 's/%s/`%s`/ge' %s > %s "
-          perl_match sed_subs from_file to_file
+        Printf.sprintf "perl -pe 's/%s/`%s | %s`/ge' %s > %s "
+          perl_match sed_subs sed_str_sp from_file to_file
       in
+      Printf.printf "%s\n" command;
       ignore (Sys.command command);
       rule "cstubs: src/lib/x_bindings.ml -> x_stubs.c, x_stubs.ml"
         ~prods:["src/lib/%_stubs.c"; "src/lib/%_generated.ml"]

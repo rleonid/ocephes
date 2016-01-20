@@ -1,8 +1,6 @@
 (** Bindings to Stephen Mosher's Cephes library. *)
 
-(** [erf x] the error function [(2/sqrt(pi) *. \int_ 0^[x] exp (-t^2) dt].
-INSERT:ndtr.c,92,136
-*)
+(** {v INSERT:ndtr.c,92,136 v} *)
 val erf : float -> float
 
 (** [erfc x] the complement of the error function [1.0 - erf x].*)
