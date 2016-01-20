@@ -9,6 +9,9 @@ let bdtr ~k ~n = C.bdtr k n
 let bdtrc ~k ~n = C.bdtrc k n
 let bdtri ~k ~n = C.bdtri k n
 
+(* btdtr.c *)
+let btdtr ~a ~b = C.btdtr a b
+
 (* ndtr.c *)
 let ndtr    = C.ndtr
 let erf     = C.erf

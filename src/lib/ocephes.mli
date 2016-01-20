@@ -1,6 +1,6 @@
 (** Bindings to Stephen Mosher's Cephes library. *)
 
-(** {2 bdtr.c } *)
+(** {2 Binomial Distribution -- bdtr.c } *)
 
 (** {v INSERT:bdtr.c,3,47 v} *)
 val bdtr : k:int -> n:int -> float -> float
@@ -10,6 +10,11 @@ val bdtrc : k:int -> n:int -> float -> float
 
 (** {v INSERT:bdtr.c,98,138 v} *)
 val bdtri : k:int -> n:int -> float -> float
+
+(** {2 Beta Distribution -- btdtr.c} *)
+
+(** {v INSERT:btdtr.c,3,42 v} *)
+val btdtr : a:float -> b:float -> float -> float
 
 (** {2 ndtr.c } *)
 

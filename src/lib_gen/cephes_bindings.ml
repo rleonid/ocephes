@@ -7,6 +7,9 @@ module C(F: Cstubs.FOREIGN) = struct
   let bdtrc     = F.foreign "bdtrc"   (int @-> int @-> double @-> returning double)
   let bdtri     = F.foreign "bdtri"   (int @-> int @-> double @-> returning double)
 
+  (* btdtr.c *)
+  let btdtr     = F.foreign "btdtr"   (double @-> double @-> double @-> returning double)
+
   (* ndtr.c *)
   let ndtr      = F.foreign "ndtr"     (double @-> returning double)
   let erf       = F.foreign "erf"      (double @-> returning double)
