@@ -27,6 +27,11 @@ let chdtri ~df x = C.chdtri df x
 (* expx2.c *)
 let expx2   = C.expx2
 
+(* fdtr.c *)
+let fdtr  ~df1 ~df2 x = C.fdtr  df1 df2 x
+let fdtrc ~df1 ~df2 x = C.fdtrc df1 df2 x
+let fdtri ~df1 ~df2 p = C.fdtri df1 df2 p
+
 (* ndtr.c *)
 let ndtr    = C.ndtr
 let erf     = C.erf

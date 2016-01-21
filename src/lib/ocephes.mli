@@ -34,8 +34,19 @@ val chdtri : df:float -> float -> float
 
 (** {2 Exponential of squared argument -- expx2.c} *)
 
-(** {v INSERT:expx2.c,2,32 v} *)
+(** {v INSERT:expx2.c,2,30 v} *)
 val expx2 : float -> int -> float
+
+(** {2 F distribution -- fdtr.c} *)
+
+(** {v INSERT:fdtr.c,2,49 v} *)
+val fdtr : df1:int -> df2:int -> float -> float
+
+(** {v INSERT:fdtr.c,52,101 v} *)
+val fdtrc : df1:int -> df2:int -> float -> float
+
+(** {v INSERT:fdtr.c,104,153 v} *)
+val fdtri :  df1:int -> df2:int -> float -> float
 
 (** {2 ndtr.c } *)
 

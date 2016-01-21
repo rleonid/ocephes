@@ -21,6 +21,11 @@ module C(F: Cstubs.FOREIGN) = struct
   (* expx2.c *)
   let expx2     = F.foreign "expx2"   (double @-> int @-> returning double)
 
+  (* fdtr.c *)
+  let fdtr      = F.foreign "fdtr"    (int @-> int @-> double @-> returning double)
+  let fdtrc     = F.foreign "fdtrc"   (int @-> int @-> double @-> returning double)
+  let fdtri     = F.foreign "fdtri"   (int @-> int @-> double @-> returning double)
+
   (* ndtr.c *)
   let ndtr      = F.foreign "ndtr"    (double @-> returning double)
   let erf       = F.foreign "erf"     (double @-> returning double)
