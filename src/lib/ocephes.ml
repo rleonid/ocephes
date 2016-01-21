@@ -36,6 +36,10 @@ let fdtri ~df1 ~df2 p = C.fdtri df1 df2 p
 let gamma   = C.gamma
 let lgam    = C.lgam
 
+(* gdtr.c *)
+let gdtr  ~a ~b x = C.gdtr  a b x
+let gdtrc ~a ~b x = C.gdtrc a b x
+
 (* ndtr.c *)
 let ndtr    = C.ndtr
 let erf     = C.erf

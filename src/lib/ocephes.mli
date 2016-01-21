@@ -59,6 +59,14 @@ val gamma : float -> float
     {v INSERT:gamma.c,45,95 v} *)
 val lgam : float -> float
 
+(** {2 Gamma distribution function -- gdtr.c} *)
+
+(** {v INSERT:gdtr.c,2,43 v} *)
+val gdtr : a:float -> b:float -> float -> float
+
+(** {v INSERT:gdtr.c,46,87 v} *)
+val gdtrc : a:float -> b:float -> float -> float
+
 (** {2 ndtr.c } *)
 
 (** {v INSERT:ndtr.c,3,45 v} *)

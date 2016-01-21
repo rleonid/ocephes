@@ -30,6 +30,10 @@ module C(F: Cstubs.FOREIGN) = struct
   let gamma     = F.foreign "gamma"   (double @-> returning double)
   let lgam      = F.foreign "lgam"    (double @-> returning double)
 
+  (* gdtr.c *)
+  let gdtr      = F.foreign "gdtr"    (double @-> double @-> double @-> returning double)
+  let gdtrc     = F.foreign "gdtrc"   (double @-> double @-> double @-> returning double)
+
   (* ndtr.c *)
   let ndtr      = F.foreign "ndtr"    (double @-> returning double)
   let erf       = F.foreign "erf"     (double @-> returning double)
