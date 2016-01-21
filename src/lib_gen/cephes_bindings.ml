@@ -18,6 +18,9 @@ module C(F: Cstubs.FOREIGN) = struct
   let chdtrc    = F.foreign "chdtrc"  (double @-> double @-> returning double)
   let chdtri    = F.foreign "chdtri"  (double @-> double @-> returning double)
 
+  (* expx2.c *)
+  let expx2     = F.foreign "expx2"   (double @-> int @-> returning double)
+
   (* ndtr.c *)
   let ndtr      = F.foreign "ndtr"    (double @-> returning double)
   let erf       = F.foreign "erf"     (double @-> returning double)

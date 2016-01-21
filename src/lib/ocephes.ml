@@ -4,7 +4,7 @@ open Ctypes
 module C = Cephes_bindings.C(Cephes_generated)
 
 (* bdtr.c *)
-let bdtr ~k ~n = C.bdtr k n
+let bdtr  ~k ~n = C.bdtr  k n
 let bdtrc ~k ~n = C.bdtrc k n
 let bdtri ~k ~n = C.bdtri k n
 
@@ -20,9 +20,12 @@ let chbevl ?n x c =
   C.chbevl x (CArray.start c_arr) n
 
 (* chdtr.c *)
-let chdtr ~df x = C.chdtr df x
-let chdtrc ~v x = C.chdtrc v x
+let chdtr  ~df x = C.chdtr  df x
+let chdtrc ~v  x = C.chdtrc v  x
 let chdtri ~df x = C.chdtri df x
+
+(* expx2.c *)
+let expx2   = C.expx2
 
 (* ndtr.c *)
 let ndtr    = C.ndtr

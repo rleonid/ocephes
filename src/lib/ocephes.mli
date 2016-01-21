@@ -1,6 +1,6 @@
 (** Bindings to Stephen Mosher's Cephes library. *)
 
-(** {2 Binomial Distribution -- bdtr.c } *)
+(** {2 Binomial Distribution -- bdtr.c} *)
 
 (** {v INSERT:bdtr.c,3,47 v} *)
 val bdtr : k:int -> n:int -> float -> float
@@ -31,6 +31,11 @@ val chdtrc : v:float -> float -> float
 
 (** {v INSERT:chdtr.c,103,138 v} *)
 val chdtri : df:float -> float -> float
+
+(** {2 Exponential of squared argument -- expx2.c} *)
+
+(** {v INSERT:expx2.c,2,32 v} *)
+val expx2 : float -> int -> float
 
 (** {2 ndtr.c } *)
 
