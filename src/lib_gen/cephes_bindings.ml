@@ -13,6 +13,11 @@ module C(F: Cstubs.FOREIGN) = struct
   (* chbevl.c *)
   let chbevl    = F.foreign "chbevl"  (double @-> ptr double @-> int @-> returning double)
 
+  (* chdtr.c *)
+  let chdtr     = F.foreign "chdtr"   (double @-> double @-> returning double)
+  let chdtrc    = F.foreign "chdtrc"  (double @-> double @-> returning double)
+  let chdtri    = F.foreign "chdtri"  (double @-> double @-> returning double)
+
   (* ndtr.c *)
   let ndtr      = F.foreign "ndtr"    (double @-> returning double)
   let erf       = F.foreign "erf"     (double @-> returning double)

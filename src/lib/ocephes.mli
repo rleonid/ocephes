@@ -21,6 +21,17 @@ val btdtr : a:float -> b:float -> float -> float
 (** {v INSERT:chbevl.c,3,50 v} *)
 val chbevl : ?n:int -> float -> float array -> float
 
+(** {2 Chi-square distribution -- chdtr.c} *)
+
+(** {v INSERT:chdtr.c,3,49 v} *)
+val chdtr : df:float -> float -> float
+
+(** {v INSERT:chdtr.c,53,99 v} *)
+val chdtrc : v:float -> float -> float
+
+(** {v INSERT:chdtr.c,103,138 v} *)
+val chdtri : df:float -> float -> float
+
 (** {2 ndtr.c } *)
 
 (** {v INSERT:ndtr.c,3,45 v} *)

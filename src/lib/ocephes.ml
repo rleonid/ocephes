@@ -19,6 +19,11 @@ let chbevl ?n x c =
   for i = 0 to n - 1 do CArray.unsafe_set c_arr i c.(i) done;
   C.chbevl x (CArray.start c_arr) n
 
+(* chdtr.c *)
+let chdtr ~df x = C.chdtr df x
+let chdtrc ~v x = C.chdtrc v x
+let chdtri ~df x = C.chdtri df x
+
 (* ndtr.c *)
 let ndtr    = C.ndtr
 let erf     = C.erf
