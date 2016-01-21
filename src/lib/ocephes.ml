@@ -32,13 +32,14 @@ let fdtr  ~df1 ~df2 x = C.fdtr  df1 df2 x
 let fdtrc ~df1 ~df2 x = C.fdtrc df1 df2 x
 let fdtri ~df1 ~df2 p = C.fdtri df1 df2 p
 
+(* gamma.c *)
+let gamma   = C.gamma
+let lgam    = C.lgam
+
 (* ndtr.c *)
 let ndtr    = C.ndtr
 let erf     = C.erf
 let erfc    = C.erfc
-
-let gamma   = C.gamma
-let lgam    = C.lgam
 
 let igam      = C.igam
 let igamc     = C.igamc

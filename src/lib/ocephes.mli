@@ -48,6 +48,17 @@ val fdtrc : df1:int -> df2:int -> float -> float
 (** {v INSERT:fdtr.c,104,153 v} *)
 val fdtri :  df1:int -> df2:int -> float -> float
 
+(** {2 Gamma function -- gamma.c} *)
+
+(** [gamma x] computes the gamma function for [x], this is the extension of the
+    factorial function to real numbers.
+    {v INSERT:gamma.c,2,42 v} *)
+val gamma : float -> float
+
+(** [lgam x] computes the logarithm of the [gamma] function.
+    {v INSERT:gamma.c,45,95 v} *)
+val lgam : float -> float
+
 (** {2 ndtr.c } *)
 
 (** {v INSERT:ndtr.c,3,45 v} *)
@@ -59,12 +70,6 @@ val erf : float -> float
 (** {v INSERT:ndtr.c,92,136 v}. *)
 val erfc : float -> float
 
-(** [gamma x] computes the gamma function for [x], this is the extension of the
-    factorial function to real numbers. *)
-val gamma : float -> float
-
-(** [lgam x] computes the logarithm of the [gamma] function.  *)
-val lgam : float -> float
 
 (** [igam a x] computes the regularized (divided by [gamma a])
     lower incomplete (integrate from 0 to [x]) gamma function. *)
