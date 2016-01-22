@@ -137,10 +137,16 @@ val pdtrc : k:int -> float -> float
 (** {v INSERT:pdtr.c,82,120 v} *)
 val pdtri : k:int -> float -> float
 
+(** {2 Student's T distribution -- stdtr.c } *)
+
+(** {v INSERT:stdtr.c,2,50 v} *)
+val stdtr : k:int -> float -> float
+
 (** [stdtri k p] computes the value [x] such that the integral
     (from [neg_infinity] to [x]) of the Student's T probability density
-    function, with [k] degrees of freedom is [p].*)
-val stdtri : int -> float -> float
+    function, with [k] degrees of freedom is [p].
+    {v INSERT:stdtr.c,54,78 v} *)
+val stdtri : k:int -> float -> float
 
 (** [pow ~base x] raises value [base] to the power of [x]. *)
 val pow : base:float -> float -> float

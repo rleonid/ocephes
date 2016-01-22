@@ -71,5 +71,8 @@ let pdtr  ~k m = C.pdtr  k m
 let pdtrc ~k m = C.pdtrc k m
 let pdtri ~k m = C.pdtri k m
 
-let stdtri    = C.stdtri
+(* stdtr.c *)
+let stdtr  ~k t = C.stdtr  k t
+let stdtri ~k p = C.stdtri k p
+
 let pow ~base = C.pow base
