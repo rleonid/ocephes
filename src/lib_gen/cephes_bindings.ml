@@ -38,6 +38,9 @@ module C(F: Cstubs.FOREIGN) = struct
   let igam      = F.foreign "igam"    (double @-> double @-> returning double)
   let igamc     = F.foreign "igamc"   (double @-> double @-> returning double)
 
+  (* igami.c *)
+  let igami     = F.foreign "igami"   (double @-> double @-> returning double)
+
   (* ndtr.c *)
   let ndtr      = F.foreign "ndtr"    (double @-> returning double)
   let erf       = F.foreign "erf"     (double @-> returning double)

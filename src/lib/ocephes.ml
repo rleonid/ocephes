@@ -44,6 +44,9 @@ let gdtrc ~a ~b x = C.gdtrc a b x
 let igam  ~a x = C.igam a x
 let igamc ~a x = C.igamc a x
 
+(* igami.c *)
+let igami ~a p = C.igami a p
+
 (* ndtr.c *)
 let ndtr    = C.ndtr
 let erf     = C.erf

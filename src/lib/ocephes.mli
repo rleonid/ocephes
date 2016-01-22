@@ -79,6 +79,11 @@ val igam : a:float -> float -> float
    {v INSERT:igam.c,39,77 v} *)
 val igamc : a:float -> float -> float
 
+(** {2 Inverse of complemented incomplete gamma -- igami.c} *)
+
+(** {v INSERT:igami.c,2,43 v} *)
+val igami : a:float -> float -> float
+
 (** {2 ndtr.c } *)
 
 (** {v INSERT:ndtr.c,3,45 v} *)
