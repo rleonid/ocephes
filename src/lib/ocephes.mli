@@ -92,7 +92,23 @@ val igami : a:float -> float -> float
 (** {v INSERT:incbet.c,2,53 v} *)
 val incbet : a:float -> b:float -> float -> float
 
-(** {2 ndtr.c } *)
+(** {2 Inverse of incomplete beta integral -- incbi.c} *)
+
+(** {v INSERT:incbi.c,2,38 v} *)
+val incbi : a:float -> b:float -> float -> float
+
+(** {2 Negative binomial distribution -- nbdtr.c} *)
+
+(** {v INSERT:nbdtr.c,2,43 v} *)
+val nbdtr : k:int -> n:int -> float -> float
+
+(** {v INSERT:nbdtr.c,47,83 v} *)
+val nbdtrc : k:int -> n:int -> float -> float
+
+(** {v INSERT:nbdtr.c,86,109 v} *)
+val nbdtri : k:int -> n:int -> float -> float
+
+(** {2 Normal distribution -- ndtr.c } *)
 
 (** {v INSERT:ndtr.c,3,45 v} *)
 val ndtr : float -> float

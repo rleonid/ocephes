@@ -44,12 +44,18 @@ module C(F: Cstubs.FOREIGN) = struct
   (* incbet.c *)
   let incbet    = F.foreign "incbet"  (double @-> double @-> double @-> returning double)
 
+  (* incbi.c *)
+  let incbi     = F.foreign "incbi"   (double @-> double @-> double @-> returning double)
+
+  (* nbdtr.c *)
+  let nbdtr     = F.foreign "nbdtr"   (int @-> int @-> double @-> returning double)
+  let nbdtrc    = F.foreign "nbdtrc"  (int @-> int @-> double @-> returning double)
+  let nbdtri    = F.foreign "nbdtri"  (int @-> int @-> double @-> returning double)
+
   (* ndtr.c *)
   let ndtr      = F.foreign "ndtr"    (double @-> returning double)
   let erf       = F.foreign "erf"     (double @-> returning double)
   let erfc      = F.foreign "erfc"    (double @-> returning double)
-
-
 
   let ndtri     = F.foreign "ndtri"   (double @-> returning double)
   let stdtri    = F.foreign "stdtri"  (int @-> double @-> returning double)

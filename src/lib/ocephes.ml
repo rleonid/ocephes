@@ -50,11 +50,18 @@ let igami ~a p = C.igami a p
 (* incbet.c *)
 let incbet  ~a ~b x  = C.incbet a b x
 
+(* incbi.c *)
+let incbi ~a ~b x = C.incbi a b x
+
+(* nbdtr.c *)
+let nbdtr  ~k ~n p  = C.nbdtr  k n p
+let nbdtrc ~k ~n p  = C.nbdtrc k n p
+let nbdtri ~k ~n y  = C.nbdtri k n y
+
 (* ndtr.c *)
 let ndtr    = C.ndtr
 let erf     = C.erf
 let erfc    = C.erfc
-
 
 let ndtri     = C.ndtri
 let stdtri    = C.stdtri
