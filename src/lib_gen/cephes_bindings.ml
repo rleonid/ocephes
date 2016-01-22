@@ -41,6 +41,9 @@ module C(F: Cstubs.FOREIGN) = struct
   (* igami.c *)
   let igami     = F.foreign "igami"   (double @-> double @-> returning double)
 
+  (* incbet.c *)
+  let incbet    = F.foreign "incbet"  (double @-> double @-> double @-> returning double)
+
   (* ndtr.c *)
   let ndtr      = F.foreign "ndtr"    (double @-> returning double)
   let erf       = F.foreign "erf"     (double @-> returning double)

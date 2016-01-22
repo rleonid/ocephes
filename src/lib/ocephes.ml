@@ -47,6 +47,9 @@ let igamc ~a x = C.igamc a x
 (* igami.c *)
 let igami ~a p = C.igami a p
 
+(* incbet.c *)
+let incbet  ~a ~b x  = C.incbet a b x
+
 (* ndtr.c *)
 let ndtr    = C.ndtr
 let erf     = C.erf

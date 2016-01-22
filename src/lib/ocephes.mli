@@ -1,4 +1,7 @@
-(** Bindings to Stephen Mosher's Cephes library. *)
+(** Bindings to Stephen Mosher's Cephes library.
+
+    Documentation is organized alphabetically by
+    function/original-source. *)
 
 (** {2 Binomial Distribution -- bdtr.c} *)
 
@@ -83,6 +86,11 @@ val igamc : a:float -> float -> float
 
 (** {v INSERT:igami.c,2,43 v} *)
 val igami : a:float -> float -> float
+
+(** {2 Incomplete beta function -- incbet.c} *)
+
+(** {v INSERT:incbet.c,2,53 v} *)
+val incbet : a:float -> b:float -> float -> float
 
 (** {2 ndtr.c } *)
 
