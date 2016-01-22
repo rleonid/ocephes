@@ -34,14 +34,16 @@ module C(F: Cstubs.FOREIGN) = struct
   let gdtr      = F.foreign "gdtr"    (double @-> double @-> double @-> returning double)
   let gdtrc     = F.foreign "gdtrc"   (double @-> double @-> double @-> returning double)
 
+  (* igam.c *)
+  let igam      = F.foreign "igam"    (double @-> double @-> returning double)
+  let igamc     = F.foreign "igamc"   (double @-> double @-> returning double)
+
   (* ndtr.c *)
   let ndtr      = F.foreign "ndtr"    (double @-> returning double)
   let erf       = F.foreign "erf"     (double @-> returning double)
   let erfc      = F.foreign "erfc"    (double @-> returning double)
 
 
-  let igam      = F.foreign "igam"    (double @-> double @-> returning double)
-  let igamc     = F.foreign "igamc"   (double @-> double @-> returning double)
 
   let ndtri     = F.foreign "ndtri"   (double @-> returning double)
   let stdtri    = F.foreign "stdtri"  (int @-> double @-> returning double)

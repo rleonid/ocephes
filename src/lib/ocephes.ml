@@ -40,13 +40,15 @@ let lgam    = C.lgam
 let gdtr  ~a ~b x = C.gdtr  a b x
 let gdtrc ~a ~b x = C.gdtrc a b x
 
+(* igam.c *)
+let igam  ~a x = C.igam a x
+let igamc ~a x = C.igamc a x
+
 (* ndtr.c *)
 let ndtr    = C.ndtr
 let erf     = C.erf
 let erfc    = C.erfc
 
-let igam      = C.igam
-let igamc     = C.igamc
 
 let ndtri     = C.ndtri
 let stdtri    = C.stdtri

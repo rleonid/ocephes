@@ -67,6 +67,18 @@ val gdtr : a:float -> b:float -> float -> float
 (** {v INSERT:gdtr.c,46,87 v} *)
 val gdtrc : a:float -> b:float -> float -> float
 
+(** {2 Incomplete Gamma function -- igam.c} *)
+
+(** [igam a x] computes the regularized (divided by [gamma a])
+    lower incomplete (integrate from 0 to [x]) gamma function.
+    {v INSERT:igam.c,2,36 v} *)
+val igam : a:float -> float -> float
+
+(** [igamc a x] computes the regularized (divided by [gamma a])
+    uppwer incomplete (integrate [x] to [infinity]) gamma function.
+   {v INSERT:igam.c,39,77 v} *)
+val igamc : a:float -> float -> float
+
 (** {2 ndtr.c } *)
 
 (** {v INSERT:ndtr.c,3,45 v} *)
@@ -77,15 +89,6 @@ val erf : float -> float
 
 (** {v INSERT:ndtr.c,92,136 v}. *)
 val erfc : float -> float
-
-
-(** [igam a x] computes the regularized (divided by [gamma a])
-    lower incomplete (integrate from 0 to [x]) gamma function. *)
-val igam : float -> float -> float
-
-(** [igamc a x] computes the regularized (divided by [gamma a])
-    uppwer incomplete (integrate [x] to [infinity]) gamma function. *)
-val igamc : float -> float -> float
 
 (** [ndtri p] computes the value [x] such that the integral of the normal
     probability density function from [neg_infinity] to [x] is [p].*)
