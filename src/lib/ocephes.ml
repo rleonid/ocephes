@@ -63,6 +63,8 @@ let ndtr    = C.ndtr
 let erf     = C.erf
 let erfc    = C.erfc
 
+(* ndtri.c *)
 let ndtri     = C.ndtri
+
 let stdtri    = C.stdtri
 let pow ~base = C.pow base

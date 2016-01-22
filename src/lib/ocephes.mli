@@ -119,8 +119,11 @@ val erf : float -> float
 (** {v INSERT:ndtr.c,92,136 v}. *)
 val erfc : float -> float
 
+(** {2 Inverse of Normal distribution -- ndtri.c } *)
+
 (** [ndtri p] computes the value [x] such that the integral of the normal
-    probability density function from [neg_infinity] to [x] is [p].*)
+    probability density function from [neg_infinity] to [x] is [p].
+    {v INSERT:ndtri.c,2,45 v} *)
 val ndtri : float -> float
 
 (** [stdtri k p] computes the value [x] such that the integral
