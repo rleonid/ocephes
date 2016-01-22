@@ -126,6 +126,17 @@ val erfc : float -> float
     {v INSERT:ndtri.c,2,45 v} *)
 val ndtri : float -> float
 
+(** {2 Poisson distribution -- pdtr.c} *)
+
+(** {v INSERT:pdtr.c,2,39 v} *)
+val pdtr : k:int -> float -> float
+
+(** {v INSERT:pdtr.c,42,79 v} *)
+val pdtrc : k:int -> float -> float
+
+(** {v INSERT:pdtr.c,82,120 v} *)
+val pdtri : k:int -> float -> float
+
 (** [stdtri k p] computes the value [x] such that the integral
     (from [neg_infinity] to [x]) of the Student's T probability density
     function, with [k] degrees of freedom is [p].*)

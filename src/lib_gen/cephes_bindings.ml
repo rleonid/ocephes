@@ -60,6 +60,11 @@ module C(F: Cstubs.FOREIGN) = struct
   (* ndtri.c *)
   let ndtri     = F.foreign "ndtri"   (double @-> returning double)
 
+  (* pdtr.c *)
+  let pdtr      = F.foreign "pdtr"    (int @-> double @-> returning double)
+  let pdtrc     = F.foreign "pdtrc"   (int @-> double @-> returning double)
+  let pdtri     = F.foreign "pdtri"   (int @-> double @-> returning double)
+
   let stdtri    = F.foreign "stdtri"  (int @-> double @-> returning double)
   let pow       = F.foreign "pow"     (double @-> double @-> returning double)
 end

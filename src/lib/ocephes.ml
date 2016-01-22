@@ -66,5 +66,10 @@ let erfc    = C.erfc
 (* ndtri.c *)
 let ndtri     = C.ndtri
 
+(* pdtr.c *)
+let pdtr  ~k m = C.pdtr  k m
+let pdtrc ~k m = C.pdtrc k m
+let pdtri ~k m = C.pdtri k m
+
 let stdtri    = C.stdtri
 let pow ~base = C.pow base
