@@ -147,6 +147,3 @@ val stdtr : k:int -> float -> float
     function, with [k] degrees of freedom is [p].
     {v INSERT:stdtr.c,54,78 v} *)
 val stdtri : k:int -> float -> float
-
-(** [pow ~base x] raises value [base] to the power of [x]. *)
-val pow : base:float -> float -> float
