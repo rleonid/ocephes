@@ -10,7 +10,7 @@ dispatch
       ignore (Sys.command "mkdir -p _build/src/lib");
       (* From the range specified in 2nd to 3rd arguments strip
          the "^ *" from file in 1st arg.  *)
-      let perl_match = "INSERT:([a-z]+.c)\\,([0-9]+)\\,([0-9]+)" in
+      let perl_match = "INSERT:([a-z0-9]+.c)\\,([0-9]+)\\,([0-9]+)" in
       let sed_subs   = "sed -n \"$2,$3s|\\^ \\\\*||p\" src\\/lib\\/$1" in
       let sed_str_sp = "sed \"\\/\\^\\$\\/d\" " in
       let from_file  = "src/lib/ocephes.mli" in
