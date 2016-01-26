@@ -1,3 +1,8 @@
+Version 0.8.0 (2016-01-25):
+---------------------------
+  - Expose all of the probability distribution functions that are
+    present in the Cephes library.
+
 Version 0.1.2 (2015-10-23):
 ---------------------------
   - carm <carmelo.piccione@gmail.com> added power and a merlin file
