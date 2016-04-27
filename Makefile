@@ -1,45 +1,46 @@
-# OASIS_START
-# DO NOT EDIT (digest: a3c674b4239234cbbe53afe090018954)
+.PHONY: all clean build
 
-SETUP = ocaml setup.ml
+PACKAGES="ctypes,ctypes.foreign,ctypes.stubs"
+default: build
 
-build: setup.data
-	$(SETUP) -build $(BUILDFLAGS)
+libcephes_stubs:
+	ocamlbuild -use-ocamlfind -package ${PACKAGES} -I src/lib src/lib/libcephes_stubs.a
 
-doc: setup.data build
-	$(SETUP) -doc $(DOCFLAGS)
+dllcephes_stubs:
+	ocamlbuild -use-ocamlfind -package ${PACKAGES} -I src/lib src/lib/dllcephes_stubs.so
 
-test: setup.data build
-	$(SETUP) -test $(TESTFLAGS)
+build: libcephes_stubs dllcephes_stubs
+	ocamlbuild -use-ocamlfind -package ${PACKAGES} -I src/lib ocephes.cma ocephes.cmxa ocephes.cmxs
 
-all:
-	$(SETUP) -all $(ALLFLAGS)
+install:
+	ocamlfind install ocephes META \
+		_build/src/lib/cephes_bindings.cmx \
+		_build/src/lib/cephes_generated.cmx \
+		_build/src/lib/ocephes.a \
+		_build/src/lib/ocephes.o \
+		_build/src/lib/ocephes.cmi \
+		_build/src/lib/ocephes.cma \
+		_build/src/lib/ocephes.cmx \
+		_build/src/lib/ocephes.cmxa \
+		_build/src/lib/ocephes.cmxs \
+		_build/src/lib/ocephes.cmt \
+		_build/src/lib/ocephes.cmti \
+		_build/src/lib/ocephes.mli \
+		_build/src/lib/ocephes.annot \
+		_build/src/lib/libcephes_stubs.a \
+		_build/src/lib/dllcephes_stubs.so
 
-install: setup.data
-	$(SETUP) -install $(INSTALLFLAGS)
+test.byte: libcephes_stubs
+	ocamlbuild -use-ocamlfind -package ${PACKAGES} -I src/lib -I src/app test.byte
 
-uninstall: setup.data
-	$(SETUP) -uninstall $(UNINSTALLFLAGS)
+test.native: libcephes_stubs
+	ocamlbuild -use-ocamlfind -package ${PACKAGES} -I src/lib -I src/app test.native
 
-reinstall: setup.data
-	$(SETUP) -reinstall $(REINSTALLFLAGS)
+all: build test.byte test.native
+
 
 clean:
-	$(SETUP) -clean $(CLEANFLAGS)
-
-distclean:
-	$(SETUP) -distclean $(DISTCLEANFLAGS)
-
-setup.data:
-	$(SETUP) -configure $(CONFIGUREFLAGS)
-
-configure:
-	$(SETUP) -configure $(CONFIGUREFLAGS)
-
-.PHONY: build doc test all install uninstall reinstall clean distclean configure
-
-# OASIS_STOP
-#
+	ocamlbuild -clean
 
 download_cephes:
 	curl -o src/lib/cprob.tgz http://www.netlib.org/cephes/cprob.tgz && \
@@ -47,5 +48,4 @@ download_cephes:
 
 extract_cephes:
 	tar xvfz src/lib/cprob.tgz -C src/lib && \
-	tar xvfz src/lib/eval.tgz -C src/lib 
-
+	tar xvfz src/lib/eval.tgz -C src/lib

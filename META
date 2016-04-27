@@ -1,0 +1,9 @@
+version = "0.8.1"
+description = "Bindings to special math functions from the Cephes library"
+requires = "bytes ctypes.stubs"
+archive(byte) = "ocephes.cma"
+archive(byte, plugin) = "ocephes.cma"
+archive(native) = "ocephes.cmxa"
+archive(native, plugin) = "ocephes.cmxs"
+exists_if = "ocephes.cma"
+
