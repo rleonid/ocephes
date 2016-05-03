@@ -1,0 +1,3 @@
+true: debug, annot, bin_annot
+<**/test.{byte,native}> : use_cephes_stubs
+<**/ocephes.cm{x,}a> : use_cephes_stubs

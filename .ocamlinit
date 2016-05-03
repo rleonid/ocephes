@@ -1,4 +1,6 @@
-#directory "_build/src/lib"
+#use "topfind"
+#require "ctypes"
+#require "ctypes.foreign"
 #require "ctypes.stubs"
-#load_rec "_build/src/lib/ocephes.cma"
-
+#directory "_build/src/lib"
+#load_rec "ocephes.cma"
