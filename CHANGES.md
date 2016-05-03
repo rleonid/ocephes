@@ -1,3 +1,8 @@
+Version 0.8.1 (2016-05-02):
+---------------------------
+  - Replaced Oasis as a build system with OCamlbuild. Made sure code
+    works with 4.03.0.
+
 Version 0.8.0 (2016-01-25):
 ---------------------------
   - Expose all of the probability distribution functions that are
