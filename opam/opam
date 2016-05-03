@@ -12,6 +12,6 @@ install: [make "install"]
 remove: ["ocamlfind" "remove" "ocephes"]
 depends: [
   "ocamlfind" {build}
-  "oasis" {build}
+  "ocamlbuild" {build}
   "ctypes"
   ]
