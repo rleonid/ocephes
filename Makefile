@@ -23,12 +23,12 @@ install:
 		_build/src/lib/ocephes.cmx \
 		_build/src/lib/ocephes.cmxa \
 		_build/src/lib/ocephes.cmxs \
-		_build/src/lib/ocephes.cmt \
-		_build/src/lib/ocephes.cmti \
 		_build/src/lib/ocephes.mli \
 		_build/src/lib/ocephes.annot \
 		_build/src/lib/libcephes_stubs.a \
-		_build/src/lib/dllcephes_stubs.so
+		_build/src/lib/dllcephes_stubs.so \
+		-optional _build/src/lib/ocephes.cmti \
+		_build/src/lib/ocephes.cmt
 
 test.byte: libcephes_stubs
 	ocamlbuild -use-ocamlfind -package ${PACKAGES} -I src/lib -I src/app test.byte
