@@ -4,9 +4,13 @@ module Invert (B: Cstubs.BINDINGS) (I: Cstubs_inverted.INTERNAL) =
   struct
     module Ignored =
       B(struct
-        type 'a fn = unit
+        type 'a fn = 'a Ctypes.fn
+        type _ result = unit
+        type 'a return = 'a
         let foreign name fn = I.internal name fn (fun _ -> assert false)
         let foreign_value _ = failwith "foreign_value not supported"
+        let returning = Ctypes.returning
+        let (@->) = Ctypes.(@->)
       end)
   end
 
