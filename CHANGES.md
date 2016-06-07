@@ -1,3 +1,7 @@
+Version 0.8.2 (2016-05-02):
+---------------------------
+  - Support ctypes-0.6
+
 Version 0.8.1 (2016-05-02):
 ---------------------------
   - Replaced Oasis as a build system with OCamlbuild. Made sure code
