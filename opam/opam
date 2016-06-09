@@ -13,5 +13,6 @@ remove: ["ocamlfind" "remove" "ocephes"]
 depends: [
   "ocamlfind" {build}
   "ocamlbuild" {build}
-  "ctypes"
+  "ctypes" { >= "0.6.0" }
+  "ctypes-foreign"
   ]
